@@ -1,0 +1,11 @@
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io();
+  socket.on('evt1', function (data) {
+    console.log(data);
+    socket.emit('evt2', { my: 'data' });
+  });
+  socket.on('diffusion', function (data) {
+    console.log(data);
+  });
+</script>

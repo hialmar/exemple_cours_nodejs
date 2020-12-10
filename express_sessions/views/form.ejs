@@ -1,0 +1,17 @@
+<h1>Ma TODO List</h1>
+
+<p>
+<ul>
+<%
+    for(var t in taches) {
+    %>
+
+    <li><a href="/supp/<%= t %>">X</a> <%= taches[t] %></li> 
+
+<% } %></p>
+</ul>
+<p>
+<form action = '/' method = "post">
+Que dois-je faire : <input type=text name=tache> <input type=submit value="valider">
+</form>
+</p>

@@ -1,0 +1,24 @@
+Pour créer un compte, taper son id et la somme ici :<br>
+<form action='/comptes' method=post>
+	id : <input type="texte" name="id">
+	<br>
+	somme : <input type="texte" name="somme">
+	<br>
+    <input type = "submit" value = "Créer">
+</form>
+<br>
+Pour récupérer la position d'un compte, taper son id ici :<br>
+<form action='/compte' method=get>
+	id : <input type="texte" name="id">
+	<br>
+    <input type = "submit" value = "Position">
+</form>
+<br>
+Pour créditer/débiter un compte, taper son id ici et la somme (>0 pour créditer, <0 pour débiter) ici :<br>
+<form action='/compte' method=post>
+	id : <input type="texte" name="id">
+	<br>
+	somme : <input type="texte" name="somme">
+	<br>
+    <input type = "submit" value = "Créditer/Débiter">
+</form>
