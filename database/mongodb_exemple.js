@@ -1,3 +1,4 @@
+// importe le constructeur MongoClient du modile mongodb
 const { MongoClient } = require("mongodb");
 
 // Ceci est l'URI de connexion à la base de donnée mongodb
@@ -45,4 +46,4 @@ async function run() {
         await client.close();
     }
 }
-run().catch(console.dir);
+run().catch(console.dir); // on affiche les erreurs sur la console

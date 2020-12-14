@@ -1,3 +1,4 @@
+// importe le module redis
 const redis = require("redis");
 // crée un client avec les paramètres par défaut.
 const client = redis.createClient();

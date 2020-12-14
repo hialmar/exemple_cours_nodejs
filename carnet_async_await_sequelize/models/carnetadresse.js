@@ -1,3 +1,6 @@
+// Fichier généré automatiquement par
+// sequelize-auto -o "./models" -d miage -h localhost -u root -p 8889 -x root -e mysql -l es6
+
 const Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   return carnetadresse.init(sequelize, DataTypes);

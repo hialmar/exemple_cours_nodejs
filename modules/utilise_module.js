@@ -1,12 +1,18 @@
-var monModule = require("./monmodule");
+// importation du module
+const monModule = require("./monmodule");
 
-var MonNouveauType = require("./monmodule").MonNouveauType;
+// importation du type depuis le module
+const MonNouveauType = require("./monmodule").MonNouveauType;
+
+// appel des fonctions importées
 monModule.direBonjour();
 
 monModule.direByeBye();
 
-var objet = new MonNouveauType('Hello, World!');
+// création d'un objet avec le type importé
+const objet = new MonNouveauType('Hello, World!');
 
 objet.methode();
 
+// affichage de la variable importée
 console.log(monModule.maVariable);

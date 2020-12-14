@@ -22,21 +22,32 @@
         <div id="log"></div>
 
 
+        <!-- importation de jquery -->
         <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <!-- importation de la bibliothèque client -->
         <script src="/socket.io/socket.io.js"></script>
         <script>
+            // création de la partie client des websockets
             var socket = io();
-            
+
+            // demande le pseudo de l'utilisateur
             var pseudo = prompt('Quel est votre pseudo ?');
+            // envoie le message initial avec le pseudo
 			socket.emit('petit_nouveau', pseudo);
-            
+            // attend les messages du serveur
             socket.on('message', function(message) {
+                // ajoute les messages dans le div log
                 $('#log').prepend(message);
             })
 
+            // fonction appelée lors de l'appui sur le bouton submit du formulaire
             $('#formulaire_chat').submit(function () {
+                // envoie un message vers le serveur
                 socket.emit('message', $('#message').val());
-                $('#message').val('').focus(); // Vide la zone de Chat et remet le focus dessus
+                // Vide la zone de Chat et remet le focus dessus
+                $('#message').val('').focus();
+                // empêche la soumission du formulaire
+                // qui ferait changer de page
                 return false;
             })
         </script>

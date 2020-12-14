@@ -1,23 +1,33 @@
-var express = require('express');
-var morgan = require('morgan'); // Charge le middleware de logging
-var favicon = require('serve-favicon'); // Charge le middleware de favicon
+// importation du module express
+const express = require('express');
+// Charge le middleware de logging
+const morgan = require('morgan');
+// Charge le middleware de favicon
+const favicon = require('serve-favicon');
 
-var app = express();
+// création de l'app
+const app = express();
 
-app.use(morgan('combined')); // Active le middleware de logging
+// Active le middleware de logging
+app.use(morgan('combined'));
 
-app.use(express.static(__dirname + '/public')); // Indique que le dossier /public contient des fichiers statiques (middleware chargé de base)
+// Indique que le dossier /public contient des fichiers statiques (middleware chargé de base)
+app.use(express.static(__dirname + '/public'));
 
-app.use(favicon(__dirname + '/public/favicon.ico')); // Active la favicon indiquée
+// Active la favicon indiquée
+app.use(favicon(__dirname + '/public/favicon.ico'));
 
+// Route get sur /
 app.get('/', function(req,res) {
     res.send('Hello World!');
 })
 
-app.use(function(req, res){ // Répond enfin
+// ajoute la fonction catch all pour les erreurs 404
+app.use(function(req, res){
     res.send('Error 404');
 });
 
+// L'app tourne sur le port 3000
 app.listen(3000, function() {
-    console.log('Example app listening on port 3000!');
+    console.log('En écoute sur le port 3000!');
 });

@@ -1,11 +1,18 @@
+<!-- importation de la bibliothèque socket.io.js -->
 <script src="/socket.io/socket.io.js"></script>
 <script>
+  // création de la partie client des websockets
   var socket = io();
+  // attend l'événement evt1
   socket.on('evt1', function (data) {
+    // affiche le paramètre
     console.log(data);
+    // envoie un événement evt2 au serveur
     socket.emit('evt2', { my: 'data' });
   });
+  // attend l'événement diffusé
   socket.on('diffusion', function (data) {
+    // affichage du paramètre
     console.log(data);
   });
 </script>

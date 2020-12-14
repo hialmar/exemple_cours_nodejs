@@ -1,3 +1,4 @@
+// définit et exporte la classe Personne
 module.exports = class Personne {
     // constructeur
     constructor(nom, prenom, adresse, codePostal, ville) {
