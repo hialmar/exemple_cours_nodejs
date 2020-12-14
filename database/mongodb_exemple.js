@@ -10,7 +10,7 @@ const client = new MongoClient(uri, {useNewUrlParser: true, useUnifiedTopology: 
 // on fait tourner le code en asynchrone
 async function run() {
     try {
-        // appele connect et attend que la promesse soit terminée
+        // appele connect et attend que la promesse soit résolue
         await client.connect();
 
         // choisit une base de donnée
@@ -20,7 +20,7 @@ async function run() {
         // crée un document à insérer
         const doc = { nom: "Durand", prenom: "Didier", adresse: "1 place du Busca",
             codepostal: 31400, ville: "Toulouse" };
-        // insère le document et attend que la promesse soit terminée
+        // insère le document et attend que la promesse soit résolue
         const result = await collection.insertOne(doc);
         // affiche le résultat
         console.log(

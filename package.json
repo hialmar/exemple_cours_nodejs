@@ -20,7 +20,10 @@
     "mongoose": "^5.11.3",
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
     "redis": "^3.0.2",
+    "sequelize": "^6.3.5",
+    "sequelize-auto": "^0.7.5",
     "serve-favicon": "^2.5.0",
     "socket.io": "^3.0.3"
   }
