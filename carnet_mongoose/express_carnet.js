@@ -61,12 +61,12 @@ app.delete('/carnet/:nom', function(req,res) {
 app.put('/carnet/:nom', function(req,res) {
     console.log(req.body);
     // on vérifie que tout est bien précisé sur la requête
-    if(estPresent(req.body.nom) && estPresent(req.body.prenom) &&
+    if(estPresent(req.params.nom) && estPresent(req.body.prenom) &&
         estPresent(req.body.adresse) && estPresent(req.body.codepostal) &&
         estPresent(req.body.ville))
     {
         // on appelle la méthode modifierPersonne du carnet
-        carnet.modifierPersonne(req.body.nom, req.body.prenom, req.body.adresse, req.body.codepostal, req.body.ville, res);
+        carnet.modifierPersonne(req.params.nom, req.body.prenom, req.body.adresse, req.body.codepostal, req.body.ville, res);
     } else {
         // on renvoie une erreur 400
         res.status(400).send('Il manque des informations');

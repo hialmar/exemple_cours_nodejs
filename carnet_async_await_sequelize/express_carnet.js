@@ -99,7 +99,7 @@ app.delete('/carnet/:nom', function(req,res) {
 app.put('/carnet/:nom', async function(req,res) {
     console.log(req.body);
     // on vérifie que tout est bien précisé sur la requête
-    if(estPresent(req.body.nom) && estPresent(req.body.prenom) &&
+    if(estPresent(req.params.nom) && estPresent(req.body.prenom) &&
         estPresent(req.body.adresse) && estPresent(req.body.codepostal) &&
         estPresent(req.body.ville))
     {

@@ -1,3 +1,5 @@
 # Project exclude paths
 /node_modules/
 /webapp_pug/node_modules/
+/database/cours-node-eea47-firebase-adminsdk-w75j0-0f53a176e0.json
+/carnet_firebase/cours-node-eea47-firebase-adminsdk-w75j0-0f53a176e0.json

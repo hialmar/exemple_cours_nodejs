@@ -1,4 +1,4 @@
-// importe le constructeur MongoClient du modile mongodb
+// importe le constructeur MongoClient du module mongodb
 const { MongoClient } = require("mongodb");
 
 // Ceci est l'URI de connexion à la base de donnée mongodb
