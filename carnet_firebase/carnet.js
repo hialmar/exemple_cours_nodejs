@@ -64,6 +64,7 @@ module.exports = class Carnet {
             const personne = new Personne(
                 {'nom':nom, 'prenom':prenom, 'adresse':adresse,
                     'codePostal':codePostal, 'ville':ville});
+            // l'ajoute au carnet
             this._carnet.push(personne);
             // il faut aussi l'ajouter dans firebase
             const nouveauNoeud = this.ref.push();

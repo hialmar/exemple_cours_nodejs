@@ -1,9 +1,9 @@
 // récupération du module express et création de l'app
-var app = require('express')();
+const app = require('express')();
 // création d'un serveur pour l'app
-var server = require('http').Server(app);
+const server = require('http').Server(app);
 // récupération de la partie serveur des websockets
-var io = require('socket.io')(server);
+const io = require('socket.io')(server);
 
 // le serveur web va fonctionner sur le port 3000
 server.listen(3000, function () {

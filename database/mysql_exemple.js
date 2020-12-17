@@ -1,3 +1,4 @@
+// importation du module mysql
 const mysql = require('mysql');
 
 // prépare la connexion

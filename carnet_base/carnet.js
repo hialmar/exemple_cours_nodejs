@@ -20,6 +20,7 @@ module.exports = class Carnet {
         if(!this.estPresent(nom)) {
             // crée la personne
             const personne = new Personne(nom, prenom, adresse, codepostal, ville);
+            // l'ajoute au carnet
             this._carnet.push(personne);
             // on renvoie vrai
             return true;
