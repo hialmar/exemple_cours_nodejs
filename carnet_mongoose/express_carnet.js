@@ -99,3 +99,22 @@ process.on('SIGTERM', function() {
     // on ferme l'app
     server.close(() => console.log("Arrêt"));
 });
+
+// Stocke tous les sockets ouverts
+let sockets = {}, nextSocketId = 0;
+server.on('connection', function (socket) {
+    // Stocke le nouveau socket
+    const socketId = nextSocketId++;
+    sockets[socketId] = socket;
+    console.log('socket', socketId, 'ouvert');
+
+    // Enlève le socket quand il est fermé
+    socket.on('close', function () {
+        console.log('socket', socketId, 'fermé');
+        delete sockets[socketId];
+    });
+
+    // Précise un timeout de 4s sur le socket
+    // Il faut probablement augmenter cette valeur pour un vrai serveur
+    socket.setTimeout(4000);
+});
