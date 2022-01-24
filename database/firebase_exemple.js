@@ -67,5 +67,5 @@ async function run()
 }
 
 // on exécute la fonction asynchrone
-run().catch(console.log).then(()=>console.log('fin d\'excution')); // ce message sera exécuté à la fin
+run().catch(console.log).then(()=>console.log('fin d\'exécution')); // ce message sera affiché à la fin
 

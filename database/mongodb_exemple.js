@@ -11,7 +11,7 @@ const client = new MongoClient(uri, {useNewUrlParser: true, useUnifiedTopology: 
 // on fait tourner le code en asynchrone
 async function run() {
     try {
-        // appele connect et attend que la promesse soit résolue
+        // appelle connect et attend que la promesse soit résolue
         await client.connect();
 
         // choisit une base de donnée

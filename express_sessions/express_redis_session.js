@@ -73,7 +73,7 @@ app.get('/supp/:numero', function(req, res) {
 		// si le numéro existe et est un nombre
 		if(typeof req.params.numero === 'string' && typeof parseInt(req.params.numero) === 'number') {
 			console.log(req.params.numero);
-			// on enleve la tache correspondante
+			// on enlève la tache correspondante
 			sess.taches.splice(parseInt(req.params.numero), 1);
 			console.log(sess.taches);
 		}

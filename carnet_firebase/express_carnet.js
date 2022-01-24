@@ -32,7 +32,7 @@ app.post('/carnet', function(req,res) {
     {
         // on appelle la méthode ajouterPersonne de carnet
         if(carnet.ajouterPersonne(req.body.nom, req.body.prenom, req.body.adresse, req.body.codepostal, req.body.ville)) {
-            // on renvoit un message au client
+            // on renvoie un message au client
             res.send("Ajout ok");
         } else {
             // on renvoie une erreur 400
@@ -83,7 +83,7 @@ app.put('/carnet/:nom', function(req,res) {
         if(carnet.estPresent(req.params.nom)) {
             // on appelle la méthode modifierPersonne du carnet
             carnet.modifierPersonne(req.params.nom, req.body.prenom, req.body.adresse, req.body.codepostal, req.body.ville);
-            // on renvoit un message au client
+            // on renvoie un message au client
             res.send("Modification ok");
         } else {
             // on envoie une erreur 404

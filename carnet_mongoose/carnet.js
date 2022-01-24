@@ -96,7 +96,7 @@ module.exports = class Carnet {
     supprimerPersonne(nom, res) {
         this.CarnetAdresse.deleteOne({'nom': nom}, function (err, adresses) {
             if (err) return console.error(err);
-            res.send('Addresse supprimée');
+            res.send('Adresse supprimée');
         });
     }
 

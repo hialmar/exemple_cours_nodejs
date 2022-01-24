@@ -78,9 +78,9 @@ app.get('/carnet/:nom', async function (req, res) {
 });
 
 // route pour effacer un élément du carnet
-app.delete('/carnet/:nom', function (req, res) {
+app.delete('/carnet/:nom', async function (req, res) {
     try {    // on le supprime du carnet
-        carnet.supprimerPersonne(req.params.nom);
+        await carnet.supprimerPersonne(req.params.nom);
         // on renvoie un message au client
         res.send("Personne supprimée du carnet");
     } catch (e) {
@@ -99,7 +99,7 @@ app.put('/carnet/:nom', async function (req, res) {
             estPresent(req.body.ville)) {
             if (await carnet.estPresent(req.params.nom)) {
                 // on appelle la méthode modifierPersonne du carnet
-                carnet.modifierPersonne(req.params.nom, req.body.prenom, req.body.adresse, req.body.codepostal, req.body.ville);
+                await carnet.modifierPersonne(req.params.nom, req.body.prenom, req.body.adresse, req.body.codepostal, req.body.ville);
                 // on renvoit un message au client
                 res.send("Modification ok");
             } else {

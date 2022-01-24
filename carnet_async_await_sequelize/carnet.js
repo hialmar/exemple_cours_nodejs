@@ -59,7 +59,7 @@ module.exports = class Carnet {
 
     // modifie une personne
     async modifierPersonne(nom, prenom, adresse, codePostal, ville) {
-        let personne = this.recupererPersonne(nom);
+        let personne = await this.recupererPersonne(nom);
         if(personne !== null) {
             // on met à jour les attributs qui peuvent changer
             personne.prenom = prenom;
@@ -79,9 +79,9 @@ module.exports = class Carnet {
     }
 
     // supprime une personne
-    supprimerPersonne(nom) {
+    async supprimerPersonne(nom) {
         // on cherche la personne
-        this.models.carnetadresse.destroy({ where: {'nom':nom}});
+        await this.models.carnetadresse.destroy({ where: {'nom':nom}});
     }
 
     fermerConnexionSGBD() {

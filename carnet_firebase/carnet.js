@@ -45,7 +45,7 @@ module.exports = class Carnet {
                 const personne = new Personne(childData);
                 // il faut aussi sauver la clé
                 personne.setCle(childKey);
-                // on l'ajoute au carnet
+                // on l'ajoute au cache du carnet
                 self._carnet.push(personne);
             });
         });
@@ -64,7 +64,7 @@ module.exports = class Carnet {
             const personne = new Personne(
                 {'nom':nom, 'prenom':prenom, 'adresse':adresse,
                     'codePostal':codePostal, 'ville':ville});
-            // l'ajoute au carnet
+            // l'ajoute au cache du carnet (optionnel ici)
             this._carnet.push(personne);
             // il faut aussi l'ajouter dans firebase
             const nouveauNoeud = this.ref.push();

@@ -1,21 +1,21 @@
 // importation du module http
-var http = require('http');
+const http = require('http');
 // importation du module fs : gestion de fichier
-var fs = require('fs');
+const fs = require('fs');
 // importation du module ent
 // Permet de bloquer les caractères HTML (sécurité équivalente à htmlentities en PHP)
-var ent = require('ent');
+const ent = require('ent');
 
 // Chargement du fichier index.html affiché au client
-var server = http.createServer(function(req, res) {
-    fs.readFile('./index.html', 'utf-8', function(error, content) {
-        res.writeHead(200, {"Content-Type": "text/html"});
-        res.end(content);
-    });
+const server = http.createServer(function (req, res) {
+	fs.readFile('./index.html', 'utf-8', function (error, content) {
+		res.writeHead(200, {"Content-Type": "text/html"});
+		res.end(content);
+	});
 });
 
 // Chargement de socket.io
-var io = require('socket.io')(server);
+const io = require('socket.io')(server);
 
 // attente de l'événement connection
 io.sockets.on('connection', function (socket) {

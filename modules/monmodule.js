@@ -1,11 +1,11 @@
-// défintion de fonctions
+// définition de fonctions
 function direBonjour() {
     console.log('Bonjour !');
 }
 
-var direByeBye = function() {
+const direByeBye = function () {
     console.log('Bye bye !');
-}
+};
 
 // définition d'un nouveau type
 function MonNouveauType(param) {

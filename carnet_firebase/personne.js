@@ -1,5 +1,6 @@
 // définit et exporte la classe Personne
 module.exports = class Personne {
+    // ajout d'un attribut pour stocker la clé du noeud Firebase correspondant à la Personne
     _cle=null;
     // constructeur
     constructor(objet) {

@@ -47,13 +47,13 @@ app.get('/carnet', function(req,res) {
 
 // route qui retourne un élément du carnet
 app.get('/carnet/:nom', function(req,res) {
-    // on délégue à la méthode de carnet
+    // on délègue à la méthode de carnet
     carnet.recupererPersonne(req.params.nom, res);
 });
 
 // route pour effacer un élément du carnet
 app.delete('/carnet/:nom', function(req,res) {
-    // on délégue à la méthode de carnet
+    // on délègue à la méthode de carnet
     carnet.supprimerPersonne(req.params.nom, res);
 });
 
